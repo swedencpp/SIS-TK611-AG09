@@ -6,7 +6,7 @@
 
 - David Friberg (DF)
 - Dave Brown (DB)
-- Björn Andersson (BP)
+- Björn Andersson (BA)
 - Jonas Persson (JP)
 - Arvid Norberg (AN)
 - Daniel Eriksson (DE)
