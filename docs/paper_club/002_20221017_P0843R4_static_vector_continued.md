@@ -7,7 +7,7 @@
 - David Friberg (DF)
 - Dave Brown (DB)
 - Jonas Persson (JP)
-- Björn Andersson (BP)
+- Björn Andersson (BA)
 - Bengt Gustafsson (BG)
 
 ## Minutes
