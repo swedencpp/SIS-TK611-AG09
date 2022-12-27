@@ -1,0 +1,75 @@
+site_name: SIS-TK611-AG09
+site_url: https://tk611ag09.swedencpp.se
+site_dir: _site
+repo_url: https://github.com/swedencpp/SIS-TK611-AG09
+edit_uri: 'blob/main/docs/'
+edit_uri_template: 'blob/main/docs/{path}'
+
+plugins:
+    - search
+    - build_plantuml:
+        render: "local" # or "local" for local rendering
+        bin_path: !ENV PLANTUML_BIN # ignored when render: server
+        # server: "http://www.plantuml.com/plantuml" # offical plantuml server
+        output_format: "svg" # or "png"
+        diagram_root: "docs/diagrams" # should reside under docs_dir
+        output_folder: "out"
+        input_folder: "src"
+        input_extensions: "" # comma separated list of extensions to parse, by default every file is parsed
+    - literate-nav:
+        nav_file: NAV.md
+
+    - include-markdown
+    - section-index
+
+# not sure if I like that or not
+
+markdown_extensions:
+    - admonition
+    - toc:
+        permalink: "#"
+        baselevel: 1
+        separator: "_"
+    - pymdownx.snippets
+    - pymdownx.highlight:
+        anchor_linenums: true
+        use_pygments: true
+    - pymdownx.details
+    - pymdownx.tasklist
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+
+theme:
+    name: material
+    features:
+        - navigation.tabs
+    palette:
+        - scheme: default
+          primary: blue
+          toggle:
+            icon: material/brightness-7
+            name: Switch to dark mode
+        - scheme: slate
+          primary: black
+          toggle:
+            icon: material/brightness-4
+            name: Switch to light mode
+    logo: assets/SwedenCpp.png
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/slack
+      link: https://swedencpp.slack.com/
+
+extra_css:
+  - stylesheets/extra.css
+
+# add theme, maybe material will win :-)
+# https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
+# https://facelessuser.github.io/pymdown-extensions/extensions/snippets/
+# they seem to work nicely together, and can be used for client and user doc
+# this will of course require some work to be done

@@ -1,6 +1,14 @@
-# 2022-07-05: SIS/TK 611/AG09 - Paper club #1 - [P0843R4] static_vector
+# P0843R4
 
-**Paper:** https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p0843r4.html
+static_vector
+
+## About
+
+**Paper:** [P0843r4](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p0843r4.html)
+
+**Date:** 2022-07-05
+
+**Author:** David Friberg (not verbatim, best effort).
 
 **Attendees:**
 
@@ -13,8 +21,6 @@
 - Johan Söderbäck (JS)
 
 ## Minutes
-
-Minutes are taken by DF (not verbatim, best effort).
 
 - DB: relevance in embedded space; issues with dynamic memory. A better abstraction than tracking an array with a size.
 - AN: Do you have experience with Boost's static vector impl?
