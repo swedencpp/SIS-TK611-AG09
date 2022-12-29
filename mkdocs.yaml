@@ -17,7 +17,7 @@ plugins:
         input_folder: "src"
         input_extensions: "" # comma separated list of extensions to parse, by default every file is parsed
     - literate-nav:
-        nav_file: PARGE_MAP.txt
+        nav_file: PAGE_MAP.md
     - include-markdown
     - section-index
 
