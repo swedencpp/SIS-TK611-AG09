@@ -17,15 +17,13 @@ plugins:
         input_folder: "src"
         input_extensions: "" # comma separated list of extensions to parse, by default every file is parsed
     - literate-nav:
-        nav_file: NAV.md
-
+        nav_file: PARGE_MAP.txt
     - include-markdown
     - section-index
 
 # not sure if I like that or not
 
 markdown_extensions:
-    - admonition
     - toc:
         permalink: "#"
         baselevel: 1
@@ -34,6 +32,10 @@ markdown_extensions:
     - pymdownx.highlight:
         anchor_linenums: true
         use_pygments: true
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+    - admonition
     - pymdownx.details
     - pymdownx.tasklist
     - pymdownx.superfences:
@@ -66,10 +68,4 @@ extra:
       link: https://swedencpp.slack.com/
 
 extra_css:
-  - stylesheets/extra.css
-
-# add theme, maybe material will win :-)
-# https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
-# https://facelessuser.github.io/pymdown-extensions/extensions/snippets/
-# they seem to work nicely together, and can be used for client and user doc
-# this will of course require some work to be done
+    - stylesheets/extra.css
