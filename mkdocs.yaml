@@ -43,6 +43,11 @@ markdown_extensions:
             - name: mermaid
               class: mermaid
               format: !!python/name:pymdownx.superfences.fence_code_format
+    # can't be used yet see
+    # https://github.com/oprypin/mkdocs-literate-nav/issues/14
+    # - mdx_truly_sane_lists:
+    #     nested_indent: 2
+    #     truly_sane: False
 
 theme:
     name: material
