@@ -2,8 +2,8 @@ site_name: SIS-TK611-AG09
 site_url: https://tk611ag09.swedencpp.se
 site_dir: _site
 repo_url: https://github.com/swedencpp/SIS-TK611-AG09
-edit_uri: 'blob/main/docs/'
-edit_uri_template: 'blob/main/docs/{path}'
+edit_uri: 'blob/future/webpage/'
+edit_uri_template: 'blob/future/webpage/{path}'
 
 plugins:
     - search
