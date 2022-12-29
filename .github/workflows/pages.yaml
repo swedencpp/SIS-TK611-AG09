@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install missing packages
-        run: apt install graphviz
+        run: sudo apt install graphviz
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install mkdocs and co
