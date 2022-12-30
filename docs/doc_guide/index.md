@@ -29,7 +29,7 @@ docker run --rm -it \
     tk611-ag09-doc mkdocs serve -a 0.0.0.0:8000
 ```
 
-Open a browser at `http://localhost:8000`
+Open a browser at [http://localhost:8000/SIS-TK611-AG09/](http://localhost:8000/SIS-TK611-AG09/)
 
 Now you can start editing documents. Whenever the content changes, the page will be rebuilt and the website refreshed.
 

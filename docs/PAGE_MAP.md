@@ -1,7 +1,6 @@
 # Page Map
 
 - [Home](index.md)
-    - [About](about.md)
 - [Paper Club](paper_club/index.md)
     - [P0843R4, part 1](paper_club/20220705_P0843R4_static_vector.md)
     - [P0843R4, part 2](paper_club/20221017_P0843R4_static_vector_continued.md)

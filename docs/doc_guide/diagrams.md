@@ -29,27 +29,26 @@ Just start the Mermaid block with a `plantuml` fenced block.
 
 ### Include PlantUML files
 
-For lager or complex diagrams, it might be more convenient to have extra plantuml file.
-
 Place a `.puml` file in the `diagrams/src` folder. It's OK to create sub folders.
 An example input file can be found in `diagram/src/example/somestate.puml`
 
 This file will generate a corresponding output file, which can be included like this
 
 ```text
-![file](/diagrams/out/example/somestate.svg)
+![file](/SIS-TK611-AG09/diagrams/out/example/somestate.svg)
 ```
 
 This will render the file whenever the documentation is built, and show the result
-![file](/diagrams/out/example/somestate.svg)
+![file](/SIS-TK611-AG09/diagrams/out/example/somestate.svg)
+
+This option can be useful for lager or complex diagrams.
+
 
 ## Mermaid
 
 Mermaid diagrams are (for now) always inline.
 
 Just start the Mermaid block with a `mermaid` fenced block.
-
-The diagram will be rendered just in place.
 
 ``` mermaid
 graph LR
@@ -59,6 +58,8 @@ graph LR
   D --> B;
   B ---->|No| E[Yay!];
 ```
+
+The diagram will be rendered just in place.
 
 ## Examples
 
