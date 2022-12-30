@@ -23,16 +23,8 @@ jobs:
     env:
       PLANTUML_BIN: /usr/bin/plantuml
     steps:
-      - name: Install missing packages
-        run: sudo apt install -y graphviz plantuml
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install mkdocs and co
-        run: pip install -r requirements.txt
-      # - name: Install mkdocs and co
-      #   run: mkdir -p diagrams/out
-      # - name: Build Site
-      #   run: mkdocs build
       - name: Build container
         run: docker build -t tk611-ag09-doc -f Dockerfile .
       - name: Build site
