@@ -20,6 +20,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PLANTUML_BIN: /usr/bin/plantuml
     steps:
       - name: Install missing packages
         run: sudo apt install -y graphviz plantuml
