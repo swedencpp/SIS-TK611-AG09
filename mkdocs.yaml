@@ -15,7 +15,7 @@ plugins:
         diagram_root: "docs/diagrams" # should reside under docs_dir
         output_folder: "out"
         input_folder: "src"
-        input_extensions: "" # comma separated list of extensions to parse, by default every file is parsed
+        input_extensions: "puml" # comma separated list of extensions to parse, by default every file is parsed
     - literate-nav:
         nav_file: PAGE_MAP.md
     - include-markdown
@@ -38,6 +38,7 @@ markdown_extensions:
     - admonition
     - pymdownx.details
     - pymdownx.tasklist
+    - plantuml_markdown
     - pymdownx.superfences:
         custom_fences:
             - name: mermaid
@@ -48,6 +49,7 @@ markdown_extensions:
     # - mdx_truly_sane_lists:
     #     nested_indent: 2
     #     truly_sane: False
+
 
 theme:
     name: material

@@ -8,4 +8,5 @@
     - [P2723R0](paper_club/20221207_P2723R0_zero_init_auto_duration_objects.md)
 - [Doc guide](doc_guide/index.md)
     - [Doc guide](doc_guide/index.md)
+    - [Diagrams](doc_guide/diagrams.md)
     - [Paper Club Template](doc_guide/paper_club_template.md)
