@@ -2,8 +2,8 @@ site_name: SIS/TK611/AG09
 site_url: https://swedencpp.github.io/SIS-TK611-AG09/
 site_dir: _site
 repo_url: https://github.com/swedencpp/SIS-TK611-AG09
-edit_uri: 'blob/future/webpage/docs'
-edit_uri_template: 'blob/future/webpage/docs/{path}'
+edit_uri: 'blob/main/docs'
+edit_uri_template: 'blob/main/docs/{path}'
 
 plugins:
     - search
@@ -73,6 +73,8 @@ extra:
   social:
     - icon: fontawesome/brands/slack
       link: https://swedencpp.slack.com/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/SwedenCpp
 
 extra_css:
     - stylesheets/extra.css

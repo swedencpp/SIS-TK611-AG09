@@ -2,8 +2,7 @@ name: Build and Deploy Pages
 
 on:
   push:
-    branches: ["future/webpage"]
-    # TOOD adopt once mereged
+    branches: ["main"]
 
   workflow_dispatch:
 
