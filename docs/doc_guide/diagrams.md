@@ -2,7 +2,7 @@
 
 We can add [PlantUML diagrams](https://plantuml.com) and [Mermaid diagrams](https://mermaid.js.org/intro)
 
-
+Mermaid diagrams will also be shown on GitHub when a document is viewed there.
 
 ## PlantUML
 
@@ -46,7 +46,7 @@ This option can be useful for lager or complex diagrams.
 
 ## Mermaid
 
-Mermaid diagrams are (for now) always inline.
+Mermaid diagrams are always inline.
 
 Just start the Mermaid block with a `mermaid` fenced block.
 
