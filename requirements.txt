@@ -1,0 +1,10 @@
+wheel
+mkdocs
+mkdocs-build-plantuml-plugin
+plantuml-markdown
+mkdocs-section-index
+mkdocs-material
+mkdocs-literate-nav
+mkdocs-include-markdown-plugin
+mdx_truly_sane_lists
+Pygments

@@ -1,0 +1,80 @@
+site_name: SIS/TK611/AG09
+site_url: https://swedencpp.github.io/SIS-TK611-AG09/
+site_dir: _site
+repo_url: https://github.com/swedencpp/SIS-TK611-AG09
+edit_uri: 'blob/main/docs'
+edit_uri_template: 'blob/main/docs/{path}'
+
+plugins:
+    - search
+    - build_plantuml:
+        render: "local" # or "local" for local rendering
+        bin_path: !ENV PLANTUML_BIN # ignored when render: server
+        # server: "http://www.plantuml.com/plantuml" # offical plantuml server
+        output_format: "svg" # or "png"
+        diagram_root: "docs/diagrams" # should reside under docs_dir
+        output_folder: "out"
+        input_folder: "src"
+        input_extensions: "puml" # comma separated list of extensions to parse, by default every file is parsed
+    - literate-nav:
+        nav_file: PAGE_MAP.md
+    - include-markdown
+    - section-index
+
+# not sure if I like that or not
+
+markdown_extensions:
+    - toc:
+        permalink: "#"
+        baselevel: 1
+        separator: "_"
+    - pymdownx.snippets
+    - pymdownx.highlight:
+        anchor_linenums: true
+        use_pygments: true
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+    - admonition
+    - pymdownx.details
+    - pymdownx.tasklist
+    - plantuml_markdown
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+    # can't be used yet see
+    # https://github.com/oprypin/mkdocs-literate-nav/issues/14
+    # - mdx_truly_sane_lists:
+    #     nested_indent: 2
+    #     truly_sane: False
+
+
+theme:
+    name: material
+    features:
+        - navigation.tabs
+    palette:
+        - scheme: default
+          primary: blue
+          toggle:
+            icon: material/brightness-7
+            name: Switch to dark mode
+        - scheme: slate
+          primary: black
+          toggle:
+            icon: material/brightness-4
+            name: Switch to light mode
+    logo: assets/SwedenCpp.png
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/slack
+      link: https://swedencpp.slack.com/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/SwedenCpp
+
+extra_css:
+    - stylesheets/extra.css

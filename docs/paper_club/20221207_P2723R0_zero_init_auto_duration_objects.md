@@ -1,6 +1,14 @@
-# 2022-12-07: SIS/TK 611/AG09 - Paper club #3 - [P2723R0] Zero-initialize objects of automatic storage duration
+# P2723R0
 
-**Paper:** https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2723r0.html
+Zero-initialize objects of automatic storage duration
+
+## About
+
+**Paper:** [P2723r0](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2723r0.html)
+
+**Date:** 2022-12-07
+
+**Author:** David Friberg (not verbatim, best effort).
 
 **Attendees:**
 
@@ -27,8 +35,8 @@ DF: Some related references before we start:
   - Highlights:
     - Will retain focus on implicit initialization, but will not focus on semantic guarantees of what will happen when reading such values, even though "the read is OK" after P2327.
     - Why not also aim for semantics guarantees?
-        - Different views on whether its even viable at all, or viable yet.
-        - ... facilitate the easier-to-pass paper and work on semantic guarantees separately
+      - Different views on whether its even viable at all, or viable yet.
+      - ... facilitate the easier-to-pass paper and work on semantic guarantees separately
 - Tom Honermann has a related proposal: https://lists.isocpp.org/ext/2022/11/20280.php
   - [isocpp-ext] Posioned values: A feature and specification mechanism to aid diagnosis of implicitly initialized variables
   - DF: None of us have read this - read this before follow-up paper club.
@@ -42,13 +50,13 @@ DF: Some related references before we start:
       - Seems that you can still address this: catch the mistake but make it lenient (until fixed)
   - BG:
     - Also has a concern for "bug hiding" - could it be better to use "bad value" rather than zero?
-        - ... for pointers zero is reasonable for trapping
-            - MSVC already do this in debug builds
-            - Would be interesting to measure performance when adding flags for traps
-        - ... for others, risk of bug hiding (or even giving root access - access given in the example)
+      - ... for pointers zero is reasonable for trapping
+        - MSVC already do this in debug builds
+        - Would be interesting to measure performance when adding flags for traps
+      - ... for others, risk of bug hiding (or even giving root access - access given in the example)
   - OL:
     - Haven't read the mailing list
-        - (DF: it's a lot of noise)
+      - (DF: it's a lot of noise)
     - Can't decide whether paper is good/bad
     - Regarding AN's comment: you could avoid these bugs in the first place
   - BA:
@@ -58,9 +66,9 @@ DF: Some related references before we start:
     - Have have internal discussions - lots of opinions (bare metal compiler vendor)
       - Mostly run on bare metal - most bugs relating to safety
         - We typically pay for what we don't use
-            - (DF: ~the performance metrics shown in the paper may not be representative for bare metal?)
+          - (DF: ~the performance metrics shown in the paper may not be representative for bare metal?)
         - Customers may not think this feature is worth it
-            - ... meaning we may have to add a new compiler flag
+          - ... meaning we may have to add a new compiler flag
     - Fear that not only "bug-hiding" will occur, but also enforcing bad patterns in C++ developers that unitialized vars are bad
     - Also the question of how to approach this in C?
       - ... given that many customers are migrating from C to C++
@@ -80,7 +88,7 @@ DF: Some related references before we start:
   - DF:
     - Not much to add: positive, mostly worried about bug-hiding
     - Unfortunate that the paper doesn't argue around the safety aspects
-        - SSRG - very positive, most of the discussion is around how many discussion there are around it
+      - SSRG - very positive, most of the discussion is around how many discussion there are around it
             - ... maybe only the security guys pitching in?
     - AN: An option that I pointed out (regarding handling bug-hiding)
       - "In debug, you are allowed to trap - in release mode you shall not - zero-init it there"
@@ -96,7 +104,7 @@ DF: Some related references before we start:
         - BG: Even a degradation of 0.5% could be very costly for large coorparations
           - DF: The paper mentions that sometimes performance increased
             - JP: This are likely missed opportunities that could arguably be optimized without actually zero-initializing
-                - ... Potentially bugs triggering optimizations
+              - ... Potentially bugs triggering optimizations
             - AN: They mention particularly data dependencies as allowing certain kind of optimizations (early instruction actions)
 - Zooming in on **bug-hiding**:
   - AN: There seems to be no strong consensus regarding hiding bugs
@@ -117,7 +125,7 @@ DF: Some related references before we start:
     - HA: I think we should be able to trust our compilers
       - "You have to initialize, of you have annotate that you mean you cannot uninitialize"
         - DF: This would be a breaking change, if made a requirement from the standard
-            - ... the standard does not make vendor recommendations
+          - ... the standard does not make vendor recommendations
     - HA: Ideally one could add a family of incrementally increasing warnings for newer code, whilst old code falls under older code
       - ... but hard to implement in practice
     - HA: Making the old code suddenly have zero values instead of random/UB values could arguably also be breaking changes
