@@ -54,6 +54,8 @@ The required pips can be installed with `pip install -r requirements.txt`.
 
 For the [PlantUML](https://plantuml.com) installation, please visit the [PlantUML](https://plantuml.com) documentation.
 
+For starting the local development server run `mkdocs serve`.
+
 ## Live preview and edit
 
 Open a browser at [http://localhost:8000/SIS-TK611-AG09/](http://localhost:8000/SIS-TK611-AG09/)
