@@ -18,6 +18,8 @@ plugins:
         input_extensions: "puml" # comma separated list of extensions to parse, by default every file is parsed
     - literate-nav:
         nav_file: PAGE_MAP.md
+        markdown_extensions:
+            - mdx_truly_sane_lists
     - include-markdown
     - section-index
 
